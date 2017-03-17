@@ -1,0 +1,17 @@
+{
+  "name": "jsavancado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Augusto",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^1.11.2",
+    "jshint-stylish": "^2.2.0"
+  }
+}
