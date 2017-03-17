@@ -1,13 +1,13 @@
 {
   "name": "jsavancado",
   "version": "1.0.0",
-  "description": "",
+  "description": "Desenvolvimento de sistema de negociação",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lucas Augusto",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",

@@ -1,37 +1,35 @@
-var gulp = require('gulp'),
-		browserSync = require('browser-sync'),
-		jshint = require('gulp-jshint');
+const gulp = require('gulp')
+const browserSync = require('browser-sync')
+const jshint = require('gulp-jshint')
 
-gulp.task('server', function() {
-	browserSync.init({
-		server: {
-			baseDir: 'client'
-		},
-		open: false,
-		notify: true,
-		port: 3000
-	});
+gulp.task('server', () => {
+  browserSync.init({
+    server: {
+      baseDir: 'client'
+    },
+    open: false,
+    port: 3000,
+    reloadOnRestart: true
+  })
+  gulp.watch('client/*.html')
+    .on('add', browserSync.reload)
+    .on('change', browserSync.reload)
+    .on('unlink', browserSync.reload)
+  gulp.watch('client/css/**/*.css')
+    .on('add', browserSync.reload)
+    .on('change', browserSync.reload)
+    .on('unlink', browserSync.reload)
+  gulp.watch('client/js/**/*.js')
+    .on('add', ['jshint', browserSync.reload])
+    .on('change', ['jshint', browserSync.reload])
+    .on('unlink', ['jshint', browserSync.reload])
+})
 
-	gulp.watch('client/*.html')
-			.on('add', browserSync.reload)
-			.on('change', browserSync.reload)
-			.on('unlink', browserSync.reload);
+gulp.task('jshint', () => {
+  return gulp.src('client/js/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+})
 
-	gulp.watch('client/css/**/*.css')
-			.on('add', browserSync.reload)
-			.on('change', browserSync.reload)
-			.on('unlink', browserSync.reload);
 
-	gulp.watch('client/js/app/**/*.js')
-			.on('add', browserSync.reload)
-			.on('change', browserSync.reload)
-			.on('unlink', browserSync.reload);
-});
-
-gulp.task('jshint', function() {
-	return gulp.src('client/js/**/*.js')
-				.pipe(jshint())
-				.pipe(jshint.reporter('jshint-stylish'));
-});
-
-gulp.task('default', ['server'], function(){});
+gulp.task('default', ['server'], () => {})
