@@ -11,22 +11,22 @@ gulp.task('server', () => {
     port: 3000,
     reloadOnRestart: true
   })
-  gulp.watch('client/*.html')
+  gulp.watch('index.html')
     .on('add', browserSync.reload)
     .on('change', browserSync.reload)
     .on('unlink', browserSync.reload)
-  gulp.watch('client/css/**/*.css')
+  gulp.watch('assets/css/**/*.css')
     .on('add', browserSync.reload)
     .on('change', browserSync.reload)
     .on('unlink', browserSync.reload)
-  gulp.watch('client/js/**/*.js')
+  gulp.watch('assets/js/**/*.js')
     .on('add', ['jshint', browserSync.reload])
     .on('change', ['jshint', browserSync.reload])
     .on('unlink', ['jshint', browserSync.reload])
 })
 
 gulp.task('jshint', () => {
-  return gulp.src('client/js/**/*.js')
+  return gulp.src('assets/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
 })
