@@ -11,6 +11,12 @@ gulp.task('server', () => {
     port: 3000,
     reloadOnRestart: true
   })
+
+  gulp.watch([
+    'index.html',
+    'assets/css/**/*.css',
+    'assets/js/**/*.js'
+  ], browserSync.reload)
 })
 
 gulp.task('jshint', () => {
@@ -20,17 +26,4 @@ gulp.task('jshint', () => {
 })
 
 
-gulp.task('default', ['server'], () => {
-  gulp.watch('index.html')
-    .on('add', browserSync.reload)
-    .on('change', browserSync.reload)
-    .on('unlink', browserSync.reload)
-  gulp.watch('assets/css/**/*.css')
-    .on('add', browserSync.reload)
-    .on('change', browserSync.reload)
-    .on('unlink', browserSync.reload)
-  gulp.watch('assets/js/**/*.js')
-    .on('add', browserSync.reload)
-    .on('change', browserSync.reload)
-    .on('unlink', browserSync.reload)
-})
+gulp.task('default', ['server'], () => {})
