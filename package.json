@@ -4,7 +4,8 @@
   "description": "Desenvolvimento de sistema de negociação",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Lucas Augusto",
   "license": "MIT",
@@ -12,6 +13,8 @@
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
     "gulp-jshint": "^1.11.2",
-    "jshint-stylish": "^2.2.0"
+    "jshint-stylish": "^2.2.0",
+    "body-parser": "^1.15.1",
+    "express": "^4.12.3:"
   }
 }
