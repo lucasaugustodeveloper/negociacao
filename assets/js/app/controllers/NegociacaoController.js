@@ -25,6 +25,19 @@ class NegociacaoController {
     this._limpaFormulario()
   }
 
+  importaNegociacao() {
+    let service = new NegociacaoService()
+    service.obterNegociacoesDaSemana((erro, negociacoes) => {
+      if (erro) {
+        this._mensagem.texto = erro
+        return
+      }
+      
+      negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacoes))
+      this._mensagem.texto = 'Negociacoes importadas com sucesso'
+    })
+  }
+
   apaga () {
     this._listaNegociacoes.esvazia()
     this._mensagem.texto = 'Lista de Negociações apagada com sucesso!'
