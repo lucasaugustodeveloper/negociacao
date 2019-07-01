@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node ./server/server.js"
   },
   "author": "Lucas Augusto",
   "license": "MIT",
@@ -15,6 +15,6 @@
     "gulp-jshint": "^1.11.2",
     "jshint-stylish": "^2.2.0",
     "body-parser": "^1.15.1",
-    "express": "^4.12.3:"
+    "express": "^4.12.3"
   }
 }
