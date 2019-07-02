@@ -1,4 +1,4 @@
-# CSShortcurt APP
+# Negociação
 
 > desenvolvimento de sistema de negociação em javascript com es6
 
