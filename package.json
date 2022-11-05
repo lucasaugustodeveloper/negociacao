@@ -11,8 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.13.0",
-    "gulp": "^3.9.1",
-    "gulp-jshint": "^1.11.2",
+    "gulp": "^4.0.2",
+    "gulp-jshint": "^2.1.0",
     "jshint-stylish": "^2.2.0",
     "body-parser": "^1.15.1",
     "express": "^4.12.3"
